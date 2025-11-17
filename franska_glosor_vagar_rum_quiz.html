@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Franskaträning – Glosor, vägar & rum</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      background: #3949ab;
+      color: white;
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 1.6rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto 40px;
+      padding: 0 12px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #283593;
+    }
+
+    .question {
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #ddd;
+    }
+
+    .question:last-child {
+      border-bottom: none;
+    }
+
+    .question-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .question-sub {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 4px;
+      padding: 4px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.05s;
+    }
+
+    .options input {
+      margin-right: 6px;
+    }
+
+    .options label:hover {
+      background: #f1f1ff;
+      transform: translateY(-1px);
+    }
+
+    .correct {
+      background: #c8e6c9 !important;
+    }
+
+    .incorrect {
+      background: #ffcdd2 !important;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    button {
+      border-radius: 999px;
+      border: none;
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: #3949ab;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    button.secondary {
+      background: #e0e0e0;
+      color: #333;
+    }
+
+    button:hover {
+      filter: brightness(1.05);
+    }
+
+    .score {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .section-hint {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e8eaf6;
+      color: #303f9f;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      margin-left: 4px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 12px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Franska – snabbträning åk 8</h1>
+  <p>Glosor · Vägbeskrivning · Rum & möbler – flervalsquiz</p>
+</header>
+
+<main>
+
+  <!-- Sektion 1: Glosor -->
+  <section class="card" id="section-glosor">
+    <h2>1. Glosor <span class="badge">ord & uttryck</span></h2>
+    <p class="section-hint">Välj det <strong>bästa</strong> svenska eller franska alternativet.</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">1. Vad betyder <em>ça fait deux mois que j’habite ici</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> jag flyttade hit för två dagar sedan</label>
+        <label><input type="radio" name="q1" value="b"> jag har bott här i två månader</label>
+        <label><input type="radio" name="q1" value="c"> jag ska bo här i två månader</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">2. <em>ha lust att</em> på franska?</div>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> se promener</label>
+        <label><input type="radio" name="q2" value="b"> expliquer</label>
+        <label><input type="radio" name="q2" value="c"> avoir envie de</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">3. Vad betyder <em>à l’étranger</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> i utlandet</label>
+        <label><input type="radio" name="q3" value="b"> i staden</label>
+        <label><input type="radio" name="q3" value="c"> i skolan</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">4. <em>plus cher / chère</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a"> billigare</label>
+        <label><input type="radio" name="q4" value="b"> dyrare</label>
+        <label><input type="radio" name="q4" value="c"> säkrare</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">5. Vad betyder <em>quelques</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> alla</label>
+        <label><input type="radio" name="q5" value="b"> många</label>
+        <label><input type="radio" name="q5" value="c"> några</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">6. <em>un magasin</em> är…</div>
+      <div class="options">
+        <label><input type="radio" name="q6" value="a"> en affär</label>
+        <label><input type="radio" name="q6" value="b"> en kyrka</label>
+        <label><input type="radio" name="q6" value="c"> ett hörn</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">7. <em>expliquer</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q7" value="a"> att gå omkring</label>
+        <label><input type="radio" name="q7" value="b"> att förklara</label>
+        <label><input type="radio" name="q7" value="c"> att vänta</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">8. Vilket ord betyder <em>inte ännu</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a"> francophone</label>
+        <label><input type="radio" name="q8" value="b"> tout seul / toute seule</label>
+        <label><input type="radio" name="q8" value="c"> pas encore</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-glosor')">Rätta glosor</button>
+      <button class="secondary" onclick="resetSection('section-glosor')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-glosor"></div>
+  </section>
+
+  <!-- Sektion 2: Vägbeskrivning -->
+  <section class="card" id="section-vag">
+    <h2>2. Vägbeskrivning <span class="badge">demander & donner des directions</span></h2>
+    <p class="section-hint">Träna fraserna från “Fråga efter och förklara vägen”.</p>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">9. Vad betyder <em>Tourne à droite</em> (tu-form)?</div>
+      <div class="options">
+        <label><input type="radio" name="q9" value="a"> Sväng till höger</label>
+        <label><input type="radio" name="q9" value="b"> Sväng till vänster</label>
+        <label><input type="radio" name="q9" value="c"> Gå rakt fram</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">10. <em>Allez tout droit</em> (vous-form) betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q10" value="a"> gå över gatan</label>
+        <label><input type="radio" name="q10" value="b"> ta andra gatan till höger</label>
+        <label><input type="radio" name="q10" value="c"> gå rakt fram</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">11. Vad betyder <em>Traverse la rue</em> (tu-form)?</div>
+      <div class="options">
+        <label><input type="radio" name="q11" value="a"> gå förbi bion</label>
+        <label><input type="radio" name="q11" value="b"> gå över gatan</label>
+        <label><input type="radio" name="q11" value="c"> sväng till vänster</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">12. Hur frågar man artigt om vägen till stadion (ni-form)?</div>
+      <div class="options">
+        <label><input type="radio" name="q12" value="a"> Pardon, pour aller au stade, s’il vous plaît ?</label>
+        <label><input type="radio" name="q12" value="b"> Pardon, pour aller au stade, s’il te plaît ?</label>
+        <label><input type="radio" name="q12" value="c"> Comment y aller, s’il te plaît ?</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">13. <em>près de</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q13" value="a"> långt från</label>
+        <label><input type="radio" name="q13" value="b"> bakom</label>
+        <label><input type="radio" name="q13" value="c"> nära</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">14. Vad betyder <em>au bout de la rue</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q14" value="a"> mitt i gatan</label>
+        <label><input type="radio" name="q14" value="b"> där vägen slutar</label>
+        <label><input type="radio" name="q14" value="c"> på andra sidan gatan</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">15. Vilken fras passar bäst? “Först korsar du Rue de la Croix, sedan går du rakt fram.”</div>
+      <div class="question-sub">Välj det alternativ som stämmer bäst.</div>
+      <div class="options">
+        <label><input type="radio" name="q15" value="a"> D’abord, traverse la rue de la Croix, puis va tout droit.</label>
+        <label><input type="radio" name="q15" value="b"> Après, tourne à droite, puis traverse la rue de la Croix.</label>
+        <label><input type="radio" name="q15" value="c"> Va tout droit, et là tu vois le stade.</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-vag')">Rätta vägbeskrivning</button>
+      <button class="secondary" onclick="resetSection('section-vag')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-vag"></div>
+  </section>
+
+  <!-- Sektion 3: Rum & möbler -->
+  <section class="card" id="section-rum">
+    <h2>3. Rum & möbler <span class="badge">décrire une chambre</span></h2>
+    <p class="section-hint">Ord du kan behöva för att beskriva ett rum eller sovrum.</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">16. <em>un lit</em> är…</div>
+      <div class="options">
+        <label><input type="radio" name="q16" value="a"> ett skrivbord</label>
+        <label><input type="radio" name="q16" value="b"> en säng</label>
+        <label><input type="radio" name="q16" value="c"> en garderob</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">17. Vad betyder <em>une armoire</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q17" value="a"> en stol</label>
+        <label><input type="radio" name="q17" value="b"> ett fönster</label>
+        <label><input type="radio" name="q17" value="c"> en garderob</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">18. <em>une chaise</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q18" value="a"> en stol</label>
+        <label><input type="radio" name="q18" value="b"> en matta</label>
+        <label><input type="radio" name="q18" value="c"> en lampa</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">19. Vad är <em>un bureau</em> i ett rum?</div>
+      <div class="options">
+        <label><input type="radio" name="q19" value="a"> en garderob</label>
+        <label><input type="radio" name="q19" value="b"> ett skrivbord</label>
+        <label><input type="radio" name="q19" value="c"> ett badrum</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">20. <em>une lampe</em> är…</div>
+      <div class="options">
+        <label><input type="radio" name="q20" value="a"> ett täcke</label>
+        <label><input type="radio" name="q20" value="b"> ett hörn</label>
+        <label><input type="radio" name="q20" value="c"> en lampa</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">21. Vad betyder <em>une fenêtre</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q21" value="a"> ett fönster</label>
+        <label><input type="radio" name="q21" value="b"> en dörr</label>
+        <label><input type="radio" name="q21" value="c"> en vägg</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">22. <em>un tapis</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q22" value="a"> ett skrivbord</label>
+        <label><input type="radio" name="q22" value="b"> en matta</label>
+        <label><input type="radio" name="q22" value="c"> en bokhylla</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-rum')">Rätta rum & möbler</button>
+      <button class="secondary" onclick="resetSection('section-rum')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-rum"></div>
+  </section>
+
+  <!-- Total -->
+  <section class="card">
+    <h2>4. Totalt resultat</h2>
+    <p class="section-hint">Rätta alla sektioner först.</p>
+    <div class="controls">
+      <button onclick="checkAll()">Beräkna total poäng</button>
+    </div>
+    <div class="score" id="score-total"></div>
+  </section>
+</main>
+
+<footer>
+  Träna snabbt – gör quizet flera gånger tills det känns lätt.
+</footer>
+
+<script>
+  function checkSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const questions = section.querySelectorAll('.question');
+    let correctCount = 0;
+    let total = questions.length;
+
+    questions.forEach((q) => {
+      const correct = q.getAttribute('data-correct');
+      const options = q.querySelectorAll('label');
+
+      options.forEach(label => {
+        label.classList.remove('correct', 'incorrect');
+      });
+
+      const checked = q.querySelector('input[type="radio"]:checked');
+      if (checked) {
+        const value = checked.value;
+        if (value === correct) {
+          correctCount++;
+          checked.parentElement.classList.add('correct');
+        } else {
+          checked.parentElement.classList.add('incorrect');
+          options.forEach(label => {
+            const input = label.querySelector('input');
+            if (input && input.value === correct) {
+              label.classList.add('correct');
+            }
+          });
+        }
+      }
+    });
+
+    const scoreDiv = document.getElementById('score-' + sectionId);
+    scoreDiv.textContent = 'Rätt: ' + correctCount + ' av ' + total;
+  }
+
+  function resetSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const inputs = section.querySelectorAll('input[type="radio"]');
+    inputs.forEach(i => i.checked = false);
+    const labels = section.querySelectorAll('label');
+    labels.forEach(l => l.classList.remove('correct', 'incorrect'));
+    const scoreDiv = document.getElementById('score-' + sectionId);
+    if (scoreDiv) scoreDiv.textContent = '';
+    document.getElementById('score-total').textContent = '';
+  }
+
+  function checkAll() {
+    checkSection('section-glosor');
+    checkSection('section-vag');
+    checkSection('section-rum');
+
+    const allQuestions = document.querySelectorAll('.question');
+    let total = allQuestions.length;
+    let correct = 0;
+
+    allQuestions.forEach(q => {
+      const correctVal = q.getAttribute('data-correct');
+      const checked = q.querySelector('input[type="radio"]:checked');
+      if (checked && checked.value === correctVal) {
+        correct++;
+      }
+    });
+
+    const scoreTotal = document.getElementById('score-total');
+    scoreTotal.textContent = 'Totalt rätt: ' + correct + ' av ' + total;
+  }
+</script>
+
+</body>
+</html>

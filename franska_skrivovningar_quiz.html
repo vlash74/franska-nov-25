@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Franskaträning – Skriva rätt meningar</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #fafafa; margin:0; padding:0; }
+    header { background:#6a1b9a; color:white; padding:16px 20px; text-align:center; }
+    main { max-width:900px; margin:20px auto 40px; padding:0 12px; }
+    .card { background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.06); padding:16px 18px; margin-bottom:18px; }
+    h2 { margin-top:0; color:#4a148c; }
+    .question { margin-bottom:14px; padding-bottom:10px; border-bottom:1px dashed #ddd; }
+    .question:last-child { border-bottom:none; }
+    .question-title { font-weight:600; margin-bottom:6px; }
+    .options label { display:block; padding:4px 6px; border-radius:6px; cursor:pointer; margin-bottom:4px; transition:0.15s; }
+    .options input { margin-right:6px; }
+    .options label:hover { background:#f3e5f5; transform:translateY(-1px); }
+    .correct { background:#c8e6c9 !important; }
+    .incorrect { background:#ffcdd2 !important; }
+    button { border-radius:999px; border:none; padding:8px 14px; cursor:pointer; background:#6a1b9a; color:white; }
+    button.secondary { background:#e0e0e0; color:#333; }
+    .controls { margin-top:10px; display:flex; gap:8px; }
+    .score { margin-top:10px; font-weight:600; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Franska – Skriv rätt meningar</h1>
+  <p>Välj de meningar som är mest korrekta för en enkel skrivuppgift</p>
+</header>
+
+<main>
+
+<section class="card" id="section-writing">
+  <h2>1. Beskriv ditt rum</h2>
+
+  <div class="question" data-correct="b">
+    <div class="question-title">1. Vilken mening fungerar bäst i en text om ett sovrum?</div>
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> Je joue au foot dans la cuisine.</label>
+      <label><input type="radio" name="q1" value="b"> Dans ma chambre, il y a un lit et un bureau.</label>
+      <label><input type="radio" name="q1" value="c"> La voiture est grande et rouge.</label>
+    </div>
+  </div>
+
+  <div class="question" data-correct="c">
+    <div class="question-title">2. Vilken mening är korrekt placeringsbeskrivning?</div>
+    <div class="options">
+      <label><input type="radio" name="q2" value="a"> La lampe est près de la voiture.</label>
+      <label><input type="radio" name="q2" value="b"> Le lit est sur la fenêtre.</label>
+      <label><input type="radio" name="q2" value="c"> Le bureau est à côté de la fenêtre.</label>
+    </div>
+  </div>
+
+  <h2>2. Förklara vägen</h2>
+
+  <div class="question" data-correct="a">
+    <div class="question-title">3. Vilken instruktion är korrekt?</div>
+    <div class="options">
+      <label><input type="radio" name="q3" value="a"> Tu vas tout droit et tu tournes à gauche.</label>
+      <label><input type="radio" name="q3" value="b"> Tu manges la rue puis tu vas dormir.</label>
+      <label><input type="radio" name="q3" value="c"> Traverse le lit à droite.</label>
+    </div>
+  </div>
+
+  <div class="question" data-correct="b">
+    <div class="question-title">4. Vilken mening kan du ha i en vägbeskrivning?</div>
+    <div class="options">
+      <label><input type="radio" name="q4" value="a"> Je mange un sandwich dans ma chambre.</label>
+      <label><input type="radio" name="q4" value="b"> Le cinéma est en face de la gare.</label>
+      <label><input type="radio" name="q4" value="c"> La lampe joue au foot.</label>
+    </div>
+  </div>
+
+  <h2>3. Beskriv din dag</h2>
+
+  <div class="question" data-correct="c">
+    <div class="question-title">5. Vilken mening fungerar i en text om ens dag?</div>
+    <div class="options">
+      <label><input type="radio" name="q5" value="a"> Je vais au lit sur la table.</label>
+      <label><input type="radio" name="q5" value="b"> Je fais une armoire avec mes amis.</label>
+      <label><input type="radio" name="q5" value="c"> Je vais à l’école à huit heures et je fais mes devoirs le soir.</label>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="checkWriting()">Rätta skrivövning</button>
+    <button class="secondary" onclick="resetWriting()">Nollställ</button>
+  </div>
+  <div class="score" id="score-writing"></div>
+</section>
+
+</main>
+
+<script>
+function checkWriting() {
+  const section = document.getElementById("section-writing");
+  const questions = section.querySelectorAll(".question");
+  let correct = 0;
+
+  questions.forEach(q => {
+    const correctAns = q.getAttribute("data-correct");
+    const labels = q.querySelectorAll("label");
+    labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+    const checked = q.querySelector("input:checked");
+    if (checked) {
+      if (checked.value === correctAns) {
+        correct++;
+        checked.parentElement.classList.add("correct");
+      } else {
+        checked.parentElement.classList.add("incorrect");
+        labels.forEach(l => {
+          if (l.querySelector("input").value === correctAns) {
+            l.classList.add("correct");
+          }
+        });
+      }
+    }
+  });
+
+  document.getElementById("score-writing").textContent =
+    "Rätt: " + correct + " av " + questions.length;
+}
+
+function resetWriting() {
+  const section = document.getElementById("section-writing");
+  const inputs = section.querySelectorAll("input");
+  const labels = section.querySelectorAll("label");
+  inputs.forEach(i => i.checked = false);
+  labels.forEach(l => l.classList.remove("correct", "incorrect"));
+  document.getElementById("score-writing").textContent = "";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Franskaträning – Verb & grammatik</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      background: #00796b;
+      color: white;
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 1.6rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto 40px;
+      padding: 0 12px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #004d40;
+    }
+
+    .question {
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #ddd;
+    }
+
+    .question:last-child {
+      border-bottom: none;
+    }
+
+    .question-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .question-sub {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 4px;
+      padding: 4px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.05s;
+    }
+
+    .options input {
+      margin-right: 6px;
+    }
+
+    .options label:hover {
+      background: #e0f2f1;
+      transform: translateY(-1px);
+    }
+
+    .correct {
+      background: #c8e6c9 !important;
+    }
+
+    .incorrect {
+      background: #ffcdd2 !important;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    button {
+      border-radius: 999px;
+      border: none;
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: #00796b;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    button.secondary {
+      background: #e0e0e0;
+      color: #333;
+    }
+
+    button:hover {
+      filter: brightness(1.05);
+    }
+
+    .score {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .section-hint {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #b2dfdb;
+      color: #004d40;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      margin-left: 4px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 12px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Franska – Verb & grammatik</h1>
+  <p>-er-verb · être · avoir · aller · faire · ne... pas · au/aux</p>
+</header>
+
+<main>
+
+  <!-- Sektion 1: -er-verb -->
+  <section class="card" id="section-er">
+    <h2>1. -ER-verb <span class="badge">presens</span></h2>
+    <p class="section-hint">Välj rätt form av verbet i presens.</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">1. Je ______ français. (parler)</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> parles</label>
+        <label><input type="radio" name="q1" value="b"> parle</label>
+        <label><input type="radio" name="q1" value="c"> parlez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">2. Nous ______ au foot. (jouer)</div>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> jouons</label>
+        <label><input type="radio" name="q2" value="b"> jouent</label>
+        <label><input type="radio" name="q2" value="c"> jouez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">3. Vous ______ à Paris. (habiter)</div>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> habites</label>
+        <label><input type="radio" name="q3" value="b"> habitons</label>
+        <label><input type="radio" name="q3" value="c"> habitez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">4. Ils ______ la musique. (adorer)</div>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a"> adorent</label>
+        <label><input type="radio" name="q4" value="b"> adorez</label>
+        <label><input type="radio" name="q4" value="c"> adores</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-er')">Rätta -er-verb</button>
+      <button class="secondary" onclick="resetSection('section-er')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-er"></div>
+  </section>
+
+  <!-- Sektion 2: être & avoir -->
+  <section class="card" id="section-etre-avoir">
+    <h2>2. Être & avoir <span class="badge">superviktiga verb</span></h2>
+    <p class="section-hint">Välj rätt form av <em>être</em> eller <em>avoir</em>.</p>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">5. Tu ______ quinze ans. (avoir)</div>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> suis</label>
+        <label><input type="radio" name="q5" value="b"> a</label>
+        <label><input type="radio" name="q5" value="c"> as</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">6. Nous ______ contents. (être)</div>
+      <div class="options">
+        <label><input type="radio" name="q6" value="a"> sommes</label>
+        <label><input type="radio" name="q6" value="b"> êtes</label>
+        <label><input type="radio" name="q6" value="c"> sont</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">7. Ils ______ un chien. (avoir)</div>
+      <div class="options">
+        <label><input type="radio" name="q7" value="a"> ont</label>
+        <label><input type="radio" name="q7" value="b"> ont</label>
+        <label><input type="radio" name="q7" value="c"> avez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">8. Je ______ fatigué. (être)</div>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a"> suis</label>
+        <label><input type="radio" name="q8" value="b"> es</label>
+        <label><input type="radio" name="q8" value="c"> est</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-etre-avoir')">Rätta être & avoir</button>
+      <button class="secondary" onclick="resetSection('section-etre-avoir')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-etre-avoir"></div>
+  </section>
+
+  <!-- Sektion 3: aller & faire -->
+  <section class="card" id="section-aller-faire">
+    <h2>3. Aller & faire <span class="badge">gå & göra</span></h2>
+    <p class="section-hint">Välj rätt form av <em>aller</em> eller <em>faire</em>.</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">9. Il ______ au cinéma. (aller)</div>
+      <div class="options">
+        <label><input type="radio" name="q9" value="a"> vont</label>
+        <label><input type="radio" name="q9" value="b"> va</label>
+        <label><input type="radio" name="q9" value="c"> allez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">10. Nous ______ nos devoirs. (faire)</div>
+      <div class="options">
+        <label><input type="radio" name="q10" value="a"> faites</label>
+        <label><input type="radio" name="q10" value="b"> fait</label>
+        <label><input type="radio" name="q10" value="c"> faisons</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">11. Je ______ à l’école à huit heures. (aller)</div>
+      <div class="options">
+        <label><input type="radio" name="q11" value="a"> vais</label>
+        <label><input type="radio" name="q11" value="b"> va</label>
+        <label><input type="radio" name="q11" value="c"> vont</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">12. Ils ______ du sport le week-end. (faire)</div>
+      <div class="options">
+        <label><input type="radio" name="q12" value="a"> faisons</label>
+        <label><input type="radio" name="q12" value="b"> font</label>
+        <label><input type="radio" name="q12" value="c"> faites</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-aller-faire')">Rätta aller & faire</button>
+      <button class="secondary" onclick="resetSection('section-aller-faire')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-aller-faire"></div>
+  </section>
+
+  <!-- Sektion 4: Negation & au/aux -->
+  <section class="card" id="section-grammatik">
+    <h2>4. Negation & prepositioner <span class="badge">ne... pas · au / à la / aux</span></h2>
+    <p class="section-hint">Välj det alternativ som gör meningen korrekt.</p>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">13. Välj rätt negation: “Jag pratar inte franska.”</div>
+      <div class="options">
+        <label><input type="radio" name="q13" value="a"> Je parle pas français.</label>
+        <label><input type="radio" name="q13" value="b"> Je ne pas parle français.</label>
+        <label><input type="radio" name="q13" value="c"> Je ne parle pas français.</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">14. “Han går inte till skolan.”</div>
+      <div class="options">
+        <label><input type="radio" name="q14" value="a"> Il ne va pas à l’école.</label>
+        <label><input type="radio" name="q14" value="b"> Il va ne pas à l’école.</label>
+        <label><input type="radio" name="q14" value="c"> Il ne va à l’école pas.</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">15. Välj rätt form: “Je vais ___ parc.”</div>
+      <div class="options">
+        <label><input type="radio" name="q15" value="a"> à le</label>
+        <label><input type="radio" name="q15" value="b"> au</label>
+        <label><input type="radio" name="q15" value="c"> aux</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">16. Välj rätt form: “Nous allons ___ toilettes.”</div>
+      <div class="options">
+        <label><input type="radio" name="q16" value="a"> au</label>
+        <label><input type="radio" name="q16" value="b"> à la</label>
+        <label><input type="radio" name="q16" value="c"> aux</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-grammatik')">Rätta grammatik</button>
+      <button class="secondary" onclick="resetSection('section-grammatik')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-grammatik"></div>
+  </section>
+
+  <!-- Total -->
+  <section class="card">
+    <h2>5. Totalt resultat</h2>
+    <p class="section-hint">Rätta alla sektioner först.</p>
+    <div class="controls">
+      <button onclick="checkAll()">Beräkna total poäng</button>
+    </div>
+    <div class="score" id="score-total"></div>
+  </section>
+
+</main>
+
+<footer>
+  Träna verb och grammatik – gör quizet flera gånger tills det sitter.
+</footer>
+
+<script>
+  function checkSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const questions = section.querySelectorAll('.question');
+    let correctCount = 0;
+    let total = questions.length;
+
+    questions.forEach((q) => {
+      const correct = q.getAttribute('data-correct');
+      const options = q.querySelectorAll('label');
+
+      options.forEach(label => {
+        label.classList.remove('correct', 'incorrect');
+      });
+
+      const checked = q.querySelector('input[type="radio"]:checked');
+      if (checked) {
+        const value = checked.value;
+        if (value === correct) {
+          correctCount++;
+          checked.parentElement.classList.add('correct');
+        } else {
+          checked.parentElement.classList.add('incorrect');
+          options.forEach(label => {
+            const input = label.querySelector('input');
+            if (input && input.value === correct) {
+              label.classList.add('correct');
+            }
+          });
+        }
+      }
+    });
+
+    const scoreDiv = document.getElementById('score-' + sectionId);
+    scoreDiv.textContent = 'Rätt: ' + correctCount + ' av ' + total;
+  }
+
+  function resetSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const inputs = section.querySelectorAll('input[type="radio"]');
+    inputs.forEach(i => i.checked = false);
+    const labels = section.querySelectorAll('label');
+    labels.forEach(l => l.classList.remove('correct', 'incorrect'));
+    const scoreDiv = document.getElementById('score-' + sectionId);
+    if (scoreDiv) scoreDiv.textContent = '';
+    document.getElementById('score-total').textContent = '';
+  }
+
+  function checkAll() {
+    checkSection('section-er');
+    checkSection('section-etre-avoir');
+    checkSection('section-aller-faire');
+    checkSection('section-grammatik');
+
+    const allQuestions = document.querySelectorAll('.question');
+    let total = allQuestions.length;
+    let correct = 0;
+
+    allQuestions.forEach(q => {
+      const correctVal = q.getAttribute('data-correct');
+      const checked = q.querySelector('input[type="radio"]:checked');
+      if (checked && checked.value === correctVal) {
+        correct++;
+      }
+    });
+
+    const scoreTotal = document.getElementById('score-total');
+    scoreTotal.textContent = 'Totalt rätt: ' + correct + ' av ' + total;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Franskaträning – MEGA-QUIZ (medium)</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f4f8;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg,#3949ab,#6a1b9a);
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 1.7rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 960px;
+      margin: 20px auto 40px;
+      padding: 0 12px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      color: #283593;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 0.75rem;
+      background: #e8eaf6;
+      color: #303f9f;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .section-hint {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .question {
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #ddd;
+    }
+    .question:last-child {
+      border-bottom: none;
+    }
+    .question-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .question-sub {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 4px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 4px;
+      padding: 4px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.05s;
+    }
+    .options input {
+      margin-right: 6px;
+    }
+    .options label:hover {
+      background: #f1f1ff;
+      transform: translateY(-1px);
+    }
+    .correct {
+      background: #c8e6c9 !important;
+    }
+    .incorrect {
+      background: #ffcdd2 !important;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    button {
+      border-radius: 999px;
+      border: none;
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: #3949ab;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    button.secondary {
+      background: #e0e0e0;
+      color: #333;
+    }
+    button:hover {
+      filter: brightness(1.05);
+    }
+    .score {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 18px;
+      padding: 0 12px;
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 12px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Franska – MEGA-QUIZ (medium)</h1>
+  <p>Glosor · Verb · Vägbeskrivning · Rum · Skrivdel · “Läs-hörförståelse”</p>
+</header>
+
+<main>
+
+  <!-- Sektion 1: Glosor -->
+  <section class="card" id="section-glosor">
+    <h2>1. Glosor & uttryck <span class="badge">ord du måste kunna</span></h2>
+    <p class="section-hint">Välj rätt översättning (ibland sv → fr, ibland fr → sv).</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">1. Vad betyder <em>ça fait deux mois que j’habite ici</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> jag flyttade hit för två dagar sedan</label>
+        <label><input type="radio" name="q1" value="b"> jag har bott här i två månader</label>
+        <label><input type="radio" name="q1" value="c"> jag ska bo här i två månader</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">2. “ha lust att” på franska?</div>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> se promener</label>
+        <label><input type="radio" name="q2" value="b"> expliquer</label>
+        <label><input type="radio" name="q2" value="c"> avoir envie de</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">3. Vad betyder <em>à l’étranger</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> i utlandet</label>
+        <label><input type="radio" name="q3" value="b"> i staden</label>
+        <label><input type="radio" name="q3" value="c"> i skolan</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">4. <em>plus cher / chère</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a"> billigare</label>
+        <label><input type="radio" name="q4" value="b"> dyrare</label>
+        <label><input type="radio" name="q4" value="c"> säkrare</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">5. Vad betyder <em>quelques</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> alla</label>
+        <label><input type="radio" name="q5" value="b"> många</label>
+        <label><input type="radio" name="q5" value="c"> några</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">6. <em>un magasin</em> är…</div>
+      <div class="options">
+        <label><input type="radio" name="q6" value="a"> en affär</label>
+        <label><input type="radio" name="q6" value="b"> en kyrka</label>
+        <label><input type="radio" name="q6" value="c"> ett hörn</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">7. Vad betyder <em>tout seul / toute seule</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q7" value="a"> tillsammans</label>
+        <label><input type="radio" name="q7" value="b"> alldeles ensam</label>
+        <label><input type="radio" name="q7" value="c"> för sent</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">8. Vilket ord betyder <em>inte ännu</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a"> bientôt</label>
+        <label><input type="radio" name="q8" value="b"> toujours</label>
+        <label><input type="radio" name="q8" value="c"> pas encore</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">9. Översätt till franska: “några vänner”.</div>
+      <div class="options">
+        <label><input type="radio" name="q9" value="a"> quelques amis</label>
+        <label><input type="radio" name="q9" value="b"> tous les amis</label>
+        <label><input type="radio" name="q9" value="c"> ami seul</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">10. Översätt: “en stad”.</div>
+      <div class="options">
+        <label><input type="radio" name="q10" value="a"> un magasin</label>
+        <label><input type="radio" name="q10" value="b"> une ville</label>
+        <label><input type="radio" name="q10" value="c"> une gare</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-glosor')">Rätta glosor</button>
+      <button class="secondary" onclick="resetSection('section-glosor')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-glosor"></div>
+  </section>
+
+  <!-- Sektion 2: Verb -->
+  <section class="card" id="section-verb">
+    <h2>2. Verb i presens <span class="badge">-er, être, avoir, aller, faire</span></h2>
+    <p class="section-hint">Välj rätt böjning.</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">11. Je ______ français. (parler)</div>
+      <div class="options">
+        <label><input type="radio" name="q11" value="a"> parles</label>
+        <label><input type="radio" name="q11" value="b"> parle</label>
+        <label><input type="radio" name="q11" value="c"> parlez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">12. Nous ______ au foot. (jouer)</div>
+      <div class="options">
+        <label><input type="radio" name="q12" value="a"> jouons</label>
+        <label><input type="radio" name="q12" value="b"> jouent</label>
+        <label><input type="radio" name="q12" value="c"> jouez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">13. Vous ______ à Paris. (habiter)</div>
+      <div class="options">
+        <label><input type="radio" name="q13" value="a"> habites</label>
+        <label><input type="radio" name="q13" value="b"> habitons</label>
+        <label><input type="radio" name="q13" value="c"> habitez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">14. Ils ______ la musique. (adorer)</div>
+      <div class="options">
+        <label><input type="radio" name="q14" value="a"> adorent</label>
+        <label><input type="radio" name="q14" value="b"> adorez</label>
+        <label><input type="radio" name="q14" value="c"> adores</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">15. Tu ______ quinze ans. (avoir)</div>
+      <div class="options">
+        <label><input type="radio" name="q15" value="a"> suis</label>
+        <label><input type="radio" name="q15" value="b"> a</label>
+        <label><input type="radio" name="q15" value="c"> as</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">16. Nous ______ contents. (être)</div>
+      <div class="options">
+        <label><input type="radio" name="q16" value="a"> sommes</label>
+        <label><input type="radio" name="q16" value="b"> êtes</label>
+        <label><input type="radio" name="q16" value="c"> sont</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">17. Ils ______ un chien. (avoir)</div>
+      <div class="options">
+        <label><input type="radio" name="q17" value="a"> avons</label>
+        <label><input type="radio" name="q17" value="b"> ont</label>
+        <label><input type="radio" name="q17" value="c"> avez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">18. Je ______ fatigué. (être)</div>
+      <div class="options">
+        <label><input type="radio" name="q18" value="a"> suis</label>
+        <label><input type="radio" name="q18" value="b"> es</label>
+        <label><input type="radio" name="q18" value="c"> est</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">19. Il ______ au cinéma. (aller)</div>
+      <div class="options">
+        <label><input type="radio" name="q19" value="a"> vont</label>
+        <label><input type="radio" name="q19" value="b"> va</label>
+        <label><input type="radio" name="q19" value="c"> allez</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">20. Nous ______ nos devoirs. (faire)</div>
+      <div class="options">
+        <label><input type="radio" name="q20" value="a"> faites</label>
+        <label><input type="radio" name="q20" value="b"> fait</label>
+        <label><input type="radio" name="q20" value="c"> faisons</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">21. Je ______ à l’école à huit heures. (aller)</div>
+      <div class="options">
+        <label><input type="radio" name="q21" value="a"> vais</label>
+        <label><input type="radio" name="q21" value="b"> va</label>
+        <label><input type="radio" name="q21" value="c"> vont</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">22. Ils ______ du sport le week-end. (faire)</div>
+      <div class="options">
+        <label><input type="radio" name="q22" value="a"> faisons</label>
+        <label><input type="radio" name="q22" value="b"> font</label>
+        <label><input type="radio" name="q22" value="c"> faites</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-verb')">Rätta verb</button>
+      <button class="secondary" onclick="resetSection('section-verb')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-verb"></div>
+  </section>
+
+  <!-- Sektion 3: Negation & prepositioner -->
+  <section class="card" id="section-grammatik">
+    <h2>3. Grammatik <span class="badge">ne... pas · au / à la / aux</span></h2>
+    <p class="section-hint">Välj den grammatiskt korrekta meningen.</p>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">23. “Jag pratar inte franska.”</div>
+      <div class="options">
+        <label><input type="radio" name="q23" value="a"> Je parle pas français.</label>
+        <label><input type="radio" name="q23" value="b"> Je ne pas parle français.</label>
+        <label><input type="radio" name="q23" value="c"> Je ne parle pas français.</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">24. “Han går inte till skolan.”</div>
+      <div class="options">
+        <label><input type="radio" name="q24" value="a"> Il ne va pas à l’école.</label>
+        <label><input type="radio" name="q24" value="b"> Il va ne pas à l’école.</label>
+        <label><input type="radio" name="q24" value="c"> Il ne va à l’école pas.</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">25. Välj rätt form: “Je vais ___ parc.”</div>
+      <div class="options">
+        <label><input type="radio" name="q25" value="a"> à le</label>
+        <label><input type="radio" name="q25" value="b"> au</label>
+        <label><input type="radio" name="q25" value="c"> aux</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">26. Välj rätt form: “Nous allons ___ toilettes.”</div>
+      <div class="options">
+        <label><input type="radio" name="q26" value="a"> au</label>
+        <label><input type="radio" name="q26" value="b"> à la</label>
+        <label><input type="radio" name="q26" value="c"> aux</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">27. Välj rätt form: “Elle est ___ maison.” (hemma)</div>
+      <div class="options">
+        <label><input type="radio" name="q27" value="a"> à la</label>
+        <label><input type="radio" name="q27" value="b"> au</label>
+        <label><input type="radio" name="q27" value="c"> aux</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-grammatik')">Rätta grammatik</button>
+      <button class="secondary" onclick="resetSection('section-grammatik')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-grammatik"></div>
+  </section>
+
+  <!-- Sektion 4: Vägbeskrivning -->
+  <section class="card" id="section-vag">
+    <h2>4. Vägbeskrivning <span class="badge">demander & donner des directions</span></h2>
+    <p class="section-hint">Fråga efter och förklara vägen.</p>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">28. Vad betyder <em>Tourne à droite</em> (tu-form)?</div>
+      <div class="options">
+        <label><input type="radio" name="q28" value="a"> Sväng till höger</label>
+        <label><input type="radio" name="q28" value="b"> Sväng till vänster</label>
+        <label><input type="radio" name="q28" value="c"> Gå rakt fram</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">29. <em>Allez tout droit</em> (vous-form) betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q29" value="a"> gå över gatan</label>
+        <label><input type="radio" name="q29" value="b"> sväng till höger</label>
+        <label><input type="radio" name="q29" value="c"> gå rakt fram</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">30. Vad betyder <em>Traverse la rue</em> (tu-form)?</div>
+      <div class="options">
+        <label><input type="radio" name="q30" value="a"> gå förbi bion</label>
+        <label><input type="radio" name="q30" value="b"> gå över gatan</label>
+        <label><input type="radio" name="q30" value="c"> sväng till vänster</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">31. Hur frågar man artigt om vägen till stadion (ni-form)?</div>
+      <div class="options">
+        <label><input type="radio" name="q31" value="a"> Pardon, pour aller au stade, s’il vous plaît ?</label>
+        <label><input type="radio" name="q31" value="b"> Pardon, pour aller au stade, s’il te plaît ?</label>
+        <label><input type="radio" name="q31" value="c"> Comment y aller, s’il te plaît ?</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">32. <em>près de</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q32" value="a"> långt från</label>
+        <label><input type="radio" name="q32" value="b"> bakom</label>
+        <label><input type="radio" name="q32" value="c"> nära</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">33. Vad betyder <em>au bout de la rue</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q33" value="a"> mitt i gatan</label>
+        <label><input type="radio" name="q33" value="b"> där vägen slutar</label>
+        <label><input type="radio" name="q33" value="c"> på andra sidan gatan</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-vag')">Rätta vägbeskrivning</button>
+      <button class="secondary" onclick="resetSection('section-vag')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-vag"></div>
+  </section>
+
+  <!-- Sektion 5: Rum & möbler -->
+  <section class="card" id="section-rum">
+    <h2>5. Rum & möbler <span class="badge">décrire une chambre</span></h2>
+    <p class="section-hint">Ord du kan behöva när du beskriver ditt rum.</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">34. <em>un lit</em> är…</div>
+      <div class="options">
+        <label><input type="radio" name="q34" value="a"> ett skrivbord</label>
+        <label><input type="radio" name="q34" value="b"> en säng</label>
+        <label><input type="radio" name="q34" value="c"> en garderob</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">35. Vad betyder <em>une armoire</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q35" value="a"> en stol</label>
+        <label><input type="radio" name="q35" value="b"> ett fönster</label>
+        <label><input type="radio" name="q35" value="c"> en garderob</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">36. <em>une chaise</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q36" value="a"> en stol</label>
+        <label><input type="radio" name="q36" value="b"> en matta</label>
+        <label><input type="radio" name="q36" value="c"> en lampa</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">37. Vad är <em>un bureau</em> i ett rum?</div>
+      <div class="options">
+        <label><input type="radio" name="q37" value="a"> en garderob</label>
+        <label><input type="radio" name="q37" value="b"> ett skrivbord</label>
+        <label><input type="radio" name="q37" value="c"> ett badrum</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">38. <em>une lampe</em> är…</div>
+      <div class="options">
+        <label><input type="radio" name="q38" value="a"> ett täcke</label>
+        <label><input type="radio" name="q38" value="b"> ett hörn</label>
+        <label><input type="radio" name="q38" value="c"> en lampa</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">39. Vad betyder <em>une fenêtre</em>?</div>
+      <div class="options">
+        <label><input type="radio" name="q39" value="a"> ett fönster</label>
+        <label><input type="radio" name="q39" value="b"> en dörr</label>
+        <label><input type="radio" name="q39" value="c"> en vägg</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">40. <em>un tapis</em> betyder…</div>
+      <div class="options">
+        <label><input type="radio" name="q40" value="a"> ett skrivbord</label>
+        <label><input type="radio" name="q40" value="b"> en matta</label>
+        <label><input type="radio" name="q40" value="c"> en bokhylla</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-rum')">Rätta rum & möbler</button>
+      <button class="secondary" onclick="resetSection('section-rum')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-rum"></div>
+  </section>
+
+  <!-- Sektion 6: "Läs-hörförståelse" -->
+  <section class="card" id="section-hor">
+    <h2>6. Läs/hörförståelse <span class="badge">för provkänsla</span></h2>
+    <p class="section-hint">Läs texten (eller låt någon läsa högt) och svara på frågorna.</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">41–43. Text:</div>
+      <div class="question-sub">
+        “Bonjour! Je m’appelle Thomas. J’ai quatorze ans. Je vais à l’école en bus. Ma chambre est petite mais jolie. Dans ma chambre, il y a un lit, un bureau, une chaise et une lampe. Le bureau est à côté de la fenêtre.”
+      </div>
+      <div class="question-title">41. Hur gammal är Thomas?</div>
+      <div class="options">
+        <label><input type="radio" name="q41" value="a"> trettio år</label>
+        <label><input type="radio" name="q41" value="b"> fjorton år</label>
+        <label><input type="radio" name="q41" value="c"> tio år</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">42. Hur åker han till skolan?</div>
+      <div class="options">
+        <label><input type="radio" name="q42" value="a"> med tåg</label>
+        <label><input type="radio" name="q42" value="b"> till fots</label>
+        <label><input type="radio" name="q42" value="c"> med buss</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">43. Vilket stämmer om hans rum?</div>
+      <div class="options">
+        <label><input type="radio" name="q43" value="a"> det är litet men fint</label>
+        <label><input type="radio" name="q43" value="b"> det är stort och fult</label>
+        <label><input type="radio" name="q43" value="c"> det finns bara en säng</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">44–45. Ny text:</div>
+      <div class="question-sub">
+        “Pour aller au cinéma, tu vas tout droit, puis tu tournes à droite. Le cinéma est près de la gare, en face du parc.”
+      </div>
+      <div class="question-title">44. Vad gör du först?</div>
+      <div class="options">
+        <label><input type="radio" name="q44" value="a"> du svänger till vänster</label>
+        <label><input type="radio" name="q44" value="b"> du går rakt fram</label>
+        <label><input type="radio" name="q44" value="c"> du korsar gatan</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">45. Var ligger biografen?</div>
+      <div class="options">
+        <label><input type="radio" name="q45" value="a"> långt från stationen</label>
+        <label><input type="radio" name="q45" value="b"> bakom skolan</label>
+        <label><input type="radio" name="q45" value="c"> nära stationen, mittemot parken</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-hor')">Rätta läs/hörförståelse</button>
+      <button class="secondary" onclick="resetSection('section-hor')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-hor"></div>
+  </section>
+
+  <!-- Sektion 7: Skrivdel - rätt meningar -->
+  <section class="card" id="section-skriv">
+    <h2>7. Skrivdel – välj bästa meningen <span class="badge">för texterna</span></h2>
+    <p class="section-hint">Vilken mening låter mest korrekt/naturlig i en skrivuppgift?</p>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">46. Beskriv ditt rum.</div>
+      <div class="options">
+        <label><input type="radio" name="q46" value="a"> Dans ma chambre, je vais au cinéma.</label>
+        <label><input type="radio" name="q46" value="b"> Dans ma chambre, il y a un lit et un bureau.</label>
+        <label><input type="radio" name="q46" value="c"> Au cinéma, il y a une armoire et un lit.</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">47. Placering i rummet.</div>
+      <div class="options">
+        <label><input type="radio" name="q47" value="a"> Le lit est sur la fenêtre.</label>
+        <label><input type="radio" name="q47" value="b"> La chaise est dans le lit.</label>
+        <label><input type="radio" name="q47" value="c"> Le bureau est à côté de la fenêtre.</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="a">
+      <div class="question-title">48. Vägbeskrivning i en text.</div>
+      <div class="options">
+        <label><input type="radio" name="q48" value="a"> Tu vas tout droit et tu tournes à gauche.</label>
+        <label><input type="radio" name="q48" value="b"> Je mange la rue puis je dors.</label>
+        <label><input type="radio" name="q48" value="c"> La lampe joue au foot.</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="c">
+      <div class="question-title">49. Beskriv din dag.</div>
+      <div class="options">
+        <label><input type="radio" name="q49" value="a"> Je vais au lit sur la table.</label>
+        <label><input type="radio" name="q49" value="b"> Je fais une armoire avec mes amis.</label>
+        <label><input type="radio" name="q49" value="c"> Je vais à l’école à huit heures et je fais mes devoirs le soir.</label>
+      </div>
+    </div>
+
+    <div class="question" data-correct="b">
+      <div class="question-title">50. Avsluta en text om ditt rum.</div>
+      <div class="options">
+        <label><input type="radio" name="q50" value="a"> J’aime le foot parce que c’est vert.</label>
+        <label><input type="radio" name="q50" value="b"> J’aime ma chambre parce qu’elle est grande et confortable.</label>
+        <label><input type="radio" name="q50" value="c"> Je suis un magasin dans la gare.</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="checkSection('section-skriv')">Rätta skrivdel</button>
+      <button class="secondary" onclick="resetSection('section-skriv')">Nollställ</button>
+    </div>
+    <div class="score" id="score-section-skriv"></div>
+  </section>
+
+  <!-- Total -->
+  <section class="card">
+    <h2>8. Totalt resultat</h2>
+    <p class="section-hint">Tips: gör quizet flera gånger, försök slå din egen poäng.</p>
+    <div class="controls">
+      <button onclick="checkAll()">Beräkna total poäng</button>
+    </div>
+    <div class="score" id="score-total"></div>
+  </section>
+
+</main>
+
+<footer>
+  Nöta, nöta, nöta – gör om hela, eller ta en sektion i taget. 💪🇫🇷
+</footer>
+
+<script>
+  function checkSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const questions = section.querySelectorAll('.question');
+    let correctCount = 0;
+    let total = questions.length;
+
+    questions.forEach((q) => {
+      const correct = q.getAttribute('data-correct');
+      const options = q.querySelectorAll('label');
+      options.forEach(label => label.classList.remove('correct', 'incorrect'));
+      const checked = q.querySelector('input[type="radio"]:checked');
+      if (checked) {
+        const value = checked.value;
+        if (value === correct) {
+          correctCount++;
+          checked.parentElement.classList.add('correct');
+        } else {
+          checked.parentElement.classList.add('incorrect');
+          options.forEach(label => {
+            const input = label.querySelector('input');
+            if (input && input.value === correct) {
+              label.classList.add('correct');
+            }
+          });
+        }
+      }
+    });
+
+    const scoreDiv = document.getElementById('score-' + sectionId);
+    if (scoreDiv) {
+      scoreDiv.textContent = 'Rätt: ' + correctCount + ' av ' + total;
+    }
+  }
+
+  function resetSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const inputs = section.querySelectorAll('input[type="radio"]');
+    const labels = section.querySelectorAll('label');
+    inputs.forEach(i => i.checked = false);
+    labels.forEach(l => l.classList.remove('correct', 'incorrect'));
+    const scoreDiv = document.getElementById('score-' + sectionId);
+    if (scoreDiv) scoreDiv.textContent = '';
+    document.getElementById('score-total').textContent = '';
+  }
+
+  function checkAll() {
+    const sections = ['section-glosor','section-verb','section-grammatik','section-vag','section-rum','section-hor','section-skriv'];
+    sections.forEach(id => checkSection(id));
+
+    const allQuestions = document.querySelectorAll('.question');
+    let total = allQuestions.length;
+    let correct = 0;
+
+    allQuestions.forEach(q => {
+      const correctVal = q.getAttribute('data-correct');
+      const checked = q.querySelector('input[type="radio"]:checked');
+      if (checked && checked.value === correctVal) {
+        correct++;
+      }
+    });
+
+    const scoreTotal = document.getElementById('score-total');
+    scoreTotal.textContent = 'Totalt rätt: ' + correct + ' av ' + total;
+  }
+</script>
+
+</body>
+</html>

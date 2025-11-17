@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Franskaträning åk 8 – Alla övningar</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f4f8;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg,#3949ab,#6a1b9a);
+      color: white;
+      padding: 20px 20px 16px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+    main {
+      max-width: 900px;
+      margin: 24px auto 40px;
+      padding: 0 14px;
+    }
+    .intro {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      font-size: 0.94rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 14px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: #283593;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e8eaf6;
+      color: #303f9f;
+      margin-bottom: 6px;
+    }
+    .card p {
+      margin: 4px 0 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      background: #3949ab;
+      color: white;
+      margin-top: auto;
+    }
+    a.button:hover {
+      filter: brightness(1.05);
+    }
+    .small {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 18px;
+      padding: 0 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Franskaträning åk 8</h1>
+  <p>Klicka på ett spel för att öva – glosor, verb, vägar, rum, skrivdel & mega-quiz.</p>
+</header>
+
+<main>
+  <section class="intro">
+    <strong>Så här gör du:</strong>
+    <ol>
+      <li>Lägg den här filen <code>index_franska_traning.html</code> i samma mapp som de andra quiz-filerna.</li>
+      <li>Dubbelklicka på den här filen för att öppna den i webbläsaren.</li>
+      <li>Klicka på knapparna nedan för att öppna respektive övning i en ny flik.</li>
+    </ol>
+    <p class="small">Filerna den länkar till är: <code>franska_glosor_vagar_rum_quiz.html</code>, <code>franska_verb_grammatik_quiz.html</code>, <code>franska_skrivovningar_quiz.html</code>, <code>franska_mega_quiz_medium.html</code>.</p>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <span class="tag">Glosor · Vägar · Rum</span>
+      <h2>Quiz 1 – Glosor, vägbeskrivning & rum</h2>
+      <p>Träna ord och uttryck: glosor, fråga efter vägen, ge direktiv, möbler och rum.</p>
+      <a class="button" href="franska_glosor_vagar_rum_quiz.html" target="_blank">Öppna Quiz 1</a>
+    </article>
+
+    <article class="card">
+      <span class="tag">Verb & grammatik</span>
+      <h2>Quiz 2 – Verb & grammatik</h2>
+      <p>-er-verb, être, avoir, aller, faire, ne… pas, au/à la/aux. Allt som sitter i ryggraden.</p>
+      <a class="button" href="franska_verb_grammatik_quiz.html" target="_blank">Öppna Quiz 2</a>
+    </article>
+
+    <article class="card">
+      <span class="tag">Skrivdel</span>
+      <h2>Quiz 3 – Skrivövningar</h2>
+      <p>Välj rätt meningar för texter om rum, vägbeskrivning och vardag – perfekt inför skrivdelen.</p>
+      <a class="button" href="franska_skrivovningar_quiz.html" target="_blank">Öppna Quiz 3</a>
+    </article>
+
+    <article class="card">
+      <span class="tag">Allt blandat</span>
+      <h2>Quiz 4 – MEGA-QUIZ (medium)</h2>
+      <p>Ett stort prov-liknande quiz: glosor, verb, grammatik, vägar, rum, läs-/”hör”-förståelse och skrivdel.</p>
+      <a class="button" href="franska_mega_quiz_medium.html" target="_blank">Öppna MEGA-QUIZ</a>
+    </article>
+  </section>
+</main>
+
+<footer>
+  Tips: Spara hela mappen, t.ex. på skrivbordet som <strong>“Franska åk 8”</strong>. Öppna alltid den här startsidan först.
+</footer>
+
+</body>
+</html>
